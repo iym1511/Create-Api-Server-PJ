@@ -25,6 +25,7 @@ function ProjectPage(props: any) {
       });
   }, [id]);
 
+  
   return (
     <div>
       <>
