@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Project } from "./Project";
 import React from "react";
 
@@ -11,7 +12,7 @@ interface ProjectCardProps {
   // return되는것이 없는 함수를 props해서 받아올때 타입
   // ProjectList에서 project라는 매게변수를 지정하고 받아오기떄문에
   // project(매게변수) 에도 타입을 지정해줌
-  onEdit: (project: Project) => void
+  onEdit: (project: Project) => void;
 }
 
 function ProjectCard(props: ProjectCardProps) {
@@ -25,11 +26,13 @@ function ProjectCard(props: ProjectCardProps) {
     <div className="card">
       <img src={project.imageUrl} alt={project.name} />
       <section className="section dark">
-        <h5 className="strong">
-          <strong>{project.name}</strong>
-        </h5>
-        <p>{formatDescription(project.description)}</p>
-        <p>Budget : {project.budget.toLocaleString()}</p>
+        <Link to={"/projects/" + project.id}>
+          <h5 className="strong">
+            <strong>{project.name}</strong>
+          </h5>
+          <p>{formatDescription(project.description)}</p>
+          <p>Budget : {project.budget.toLocaleString()}</p>
+        </Link>
         <button
           className=" bordered"
           onClick={() => {
