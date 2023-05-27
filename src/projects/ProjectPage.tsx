@@ -8,6 +8,7 @@ function ProjectPage(props: any) {
   const [loading, setLoading] = useState(false);
   const [project, setProject] = useState<Project | null>(null);
   const [error, setError] = useState<string | null>(null);
+  
   const params = useParams();
   const id = Number(params.id);
 
@@ -25,7 +26,7 @@ function ProjectPage(props: any) {
       });
   }, [id]);
 
-  
+
   return (
     <div>
       <>
