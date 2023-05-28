@@ -10,6 +10,7 @@ import {
 import HomePage from "./home/HomePage";
 import ProjectPage from "./projects/ProjectPage";
 
+
 function App() {
   return (
     <Router>
